@@ -1,7 +1,5 @@
 #exclude target path
-build/*
 bin/*
-build_isolated/
 # exclude build path
 
 # Prerequisites
