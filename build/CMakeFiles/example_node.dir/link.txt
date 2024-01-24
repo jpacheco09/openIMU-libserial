@@ -1,0 +1,1 @@
+/usr/lib/ccache/c++     CMakeFiles/example_node.dir/src/main.cpp.o  -o example_node  -lserial -pthread 

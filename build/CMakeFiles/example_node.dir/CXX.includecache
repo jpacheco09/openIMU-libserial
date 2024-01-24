@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jpacheco/workspaces/cpp_dev/openIMU-libserial/src/main.cpp
+libserial/SerialPort.h
+-
+libserial/SerialPortConstants.h
+-
+libserial/SerialStream.h
+-
+cstdlib
+-
+ios
+-
+iostream
+-
+
