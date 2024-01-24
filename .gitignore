@@ -1,7 +1,8 @@
 #exclude target path
 bin/
-# exclude build path
 build/
+build_isolated/
+# exclude build path
 
 # Prerequisites
 *.d
