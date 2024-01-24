@@ -61,10 +61,6 @@ int main() {
     uint32_t packet_header = 0;
     uint8_t buffer_idx = 0;
 
-    float roll = 0;
-    float pitch = 0;
-    float heading = 0;
-
     float attitude_data[3] = {0.0, 0.0, 0.0};
     float linear_rate[3];
     float linear_accel[3];

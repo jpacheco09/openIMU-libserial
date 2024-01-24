@@ -6,14 +6,22 @@
 
 #IncludeRegexTransform: 
 
-/home/jpacheco/workspaces/cpp_dev/openIMU-libserial/src/main.cpp
+/home/jpacheco/git/openIMU-libserial/src/main.cpp
+bits/stdint-uintn.h
+-
 libserial/SerialPort.h
 -
 libserial/SerialPortConstants.h
 -
 libserial/SerialStream.h
 -
+cstddef
+-
+cstdio
+-
 cstdlib
+-
+cstring
 -
 ios
 -

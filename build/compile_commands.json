@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/jpacheco/workspaces/cpp_dev/openIMU-libserial/build",
-  "command": "/usr/lib/ccache/clang++-10    -g   -std=gnu++17 -o CMakeFiles/example_node.dir/src/main.cpp.o -c /home/jpacheco/workspaces/cpp_dev/openIMU-libserial/src/main.cpp",
-  "file": "/home/jpacheco/workspaces/cpp_dev/openIMU-libserial/src/main.cpp"
+  "directory": "/home/jpacheco/git/openIMU-libserial/build",
+  "command": "/usr/lib/ccache/c++      -Wall -Wextra -Wpedantic -Werror -std=gnu++17 -o CMakeFiles/example_node.dir/src/main.cpp.o -c /home/jpacheco/git/openIMU-libserial/src/main.cpp",
+  "file": "/home/jpacheco/git/openIMU-libserial/src/main.cpp"
 }
 ]

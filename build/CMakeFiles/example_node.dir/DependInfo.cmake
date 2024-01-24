@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jpacheco/workspaces/cpp_dev/openIMU-libserial/src/main.cpp" "/home/jpacheco/workspaces/cpp_dev/openIMU-libserial/build/CMakeFiles/example_node.dir/src/main.cpp.o"
+  "/home/jpacheco/git/openIMU-libserial/src/main.cpp" "/home/jpacheco/git/openIMU-libserial/build/CMakeFiles/example_node.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

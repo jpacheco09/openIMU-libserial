@@ -1,6 +1,6 @@
 #exclude target path
-bin/
-build/
+build/*
+bin/*
 build_isolated/
 # exclude build path
 
