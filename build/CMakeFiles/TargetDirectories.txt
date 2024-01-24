@@ -1,3 +1,0 @@
-/home/jpacheco/git/openIMU-libserial/build/CMakeFiles/rebuild_cache.dir
-/home/jpacheco/git/openIMU-libserial/build/CMakeFiles/edit_cache.dir
-/home/jpacheco/git/openIMU-libserial/build/CMakeFiles/example_node.dir
