@@ -105,6 +105,7 @@ int main() {
                 printf("xaccel: %f\t yaccel: %f \t zaccel: %f\n", linear_accel[0], linear_accel[1], linear_accel[2]);
             }	
 	    buffer_idx = 0;
+	    serial_stream.FlushInputBuffer();
 
         } else {  // not needed, however we could admin cpu time by setting a timeout
             continue;
