@@ -14,13 +14,13 @@
 #include <libserial/SerialPortConstants.h>
 #include <libserial/SerialStream.h>
 
+#include <array>
 #include <cstddef>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <ios>
 #include <iostream>
-#include <array>
 
 template <typename T>
 void unpackU4(uint8_t *idx, const void *buffer, T &package) {
@@ -62,16 +62,16 @@ int main() {
     uint32_t packet_header = 0;
     uint8_t buffer_idx = 0;
 
-    std::array<float,3> attitude_data;
-    std::array<float,3> linear_rate;
-    std::array<float,3> linear_accel;
+    std::array<float, 3> attitude_data;
+    std::array<float, 3> linear_rate;
+    std::array<float, 3> linear_accel;
     while (true) {
         if (serial_stream.IsDataAvailable()) {
             serial_stream.read(input_buffer, BUFFER_SIZE);
-	 //   for(auto it : input_buffer) printf("%02X ",it);
-	 //   printf("\n"); 
-	    unpackU4<uint32_t>(&buffer_idx, &input_buffer[buffer_idx], packet_header);
-   //         printf("Header: %04X\n", packet_header);
+            //   for(auto it : input_buffer) printf("%02X ",it);
+            //   printf("\n");
+            unpackU4<uint32_t>(&buffer_idx, &input_buffer[buffer_idx], packet_header);
+            //         printf("Header: %04X\n", packet_header);
             if (packet_header == 0x32615555) {
                 buffer_idx++;
                 /* debug print buffer
@@ -82,18 +82,18 @@ int main() {
                 unpackU4<uint32_t>(&buffer_idx, &input_buffer[buffer_idx], time_ms);
                 buffer_idx += 8;  // skip time_s
                                   // upack RP"Y" attitude
-                /*for (float& it : attitude_data) {
+                                  /*for (float& it : attitude_data) {
+                                      unpackU4<float>(&buffer_idx, &input_buffer[buffer_idx], it);
+                                  }*/
+                for (auto &it : attitude_data) {
                     unpackU4<float>(&buffer_idx, &input_buffer[buffer_idx], it);
-                }*/
-		for(auto& it : attitude_data){
-		    unpackU4<float>(&buffer_idx, &input_buffer[buffer_idx], it);
-	   	}
+                }
                 // unpack linear rate
-                for (auto& it : linear_rate) {
+                for (auto &it : linear_rate) {
                     unpackU4<float>(&buffer_idx, &input_buffer[buffer_idx], it);
                 }
                 // unpack linear accel
-                for (auto& it : linear_accel) {
+                for (auto &it : linear_accel) {
                     unpackU4<float>(&buffer_idx, &input_buffer[buffer_idx], it);
                 }
                 // I know, that's a repeated pattern... we shall be able to refactor it
@@ -101,11 +101,11 @@ int main() {
                 /* print data debug */
                 printf("time[ms]: %u\t", time_ms);
                 printf("Roll: %f\t Pitch: %f \t Heading: %f\n", attitude_data[0], attitude_data[1], attitude_data[2]);
- 		printf("xrate: %f\t yrate: %f \t zrate: %f\n", linear_rate[0], linear_rate[1], linear_rate[2]);
+                printf("xrate: %f\t yrate: %f \t zrate: %f\n", linear_rate[0], linear_rate[1], linear_rate[2]);
                 printf("xaccel: %f\t yaccel: %f \t zaccel: %f\n", linear_accel[0], linear_accel[1], linear_accel[2]);
-            }	
-	    buffer_idx = 0;
-	    serial_stream.FlushInputBuffer();
+            }
+            buffer_idx = 0;
+            serial_stream.FlushInputBuffer();
 
         } else {  // not needed, however we could admin cpu time by setting a timeout
             continue;

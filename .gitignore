@@ -1,8 +1,3 @@
-#exclude target path
-bin/*
-buid/*
-# exclude build path
-
 # Prerequisites
 *.d
 
@@ -35,3 +30,27 @@ buid/*
 *.exe
 *.out
 *.app
+
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+.cmake
+
+*.ninja*
+.ninja_deps
+.ninja_log
+
+# linting
+.clangd
+
+#build
+/build
+/bin
