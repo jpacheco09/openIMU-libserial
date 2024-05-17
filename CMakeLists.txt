@@ -22,6 +22,7 @@ find_package(Threads REQUIRED)
 find_package(PkgConfig)
 pkg_check_modules(SERIAL libserial)
 
+include_directories(include/)
 
 add_executable(example_node src/main.cpp)
 target_include_directories(example_node PRIVATE ${SERIAL_INCLUDE_DIRS})
