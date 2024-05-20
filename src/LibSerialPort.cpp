@@ -10,12 +10,12 @@ open_imu::LibSerialPort::LibSerialPort(const std::string& port) : port_address_{
 open_imu::LibSerialPort::~LibSerialPort() = default;
 
 bool open_imu::LibSerialPort::Open(const std::string& port, const PortSettings& settings) {
-    std::cout << "Opening: " << port << "port\n";
+    std::cout << "Opening: '" << port << "' port\n";
     std::cout << "Baudrate: " << int(settings.baud_rate) << '\n'
-              << "Data bits: " << settings.data_bits << '\n'
-              << "Flow control: " << settings.flow_control << '\n'
-              << "Parity: " << settings.parity << '\n'
-              << "Stop bits: " << settings.stop_bits << '\n';
+              << "Data bits: " << int(settings.data_bits) << '\n'
+              << "Flow control: " << std::boolalpha << settings.flow_control << '\n'
+              << "Parity: " << std::boolalpha << settings.parity << '\n'
+              << "Stop bits: " << int(settings.stop_bits) << '\n';
     return false;
 }
 

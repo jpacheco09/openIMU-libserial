@@ -1,6 +1,8 @@
 #ifndef OPENIMU_TYPES_HPP
 #define OPENIMU_TYPES_HPP
 
+#include <bits/stdint-uintn.h>
+
 #include "openIMU_constants.hpp"
 namespace open_imu {
 struct Attitude {
@@ -30,10 +32,11 @@ struct VGAHRSData {
 };
 
 struct PortSettings {
-    BAUD_RATE baudRate{};
-    bool parity{};
-    int stopBits{};
-    bool flowControl{};
+    BAUD_RATE baud_rate{BAUD_RATE::BR_115200};
+    bool parity{false};
+    int stop_bits{1};
+    bool flow_control{false};
+    uint8_t data_bits{8};
 };
 
 class DataPacket {
