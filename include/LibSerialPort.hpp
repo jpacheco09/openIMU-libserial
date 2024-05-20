@@ -20,7 +20,7 @@ public:
 
 class LibSerialPort : public ISerialPort {
 public:
-    LibSerialPort(const std::string& port = "/dev/ttyUSB0") : port_address_{port} {};
+    LibSerialPort(const std::string& port = "/dev/ttyUSB0");  // : port_address_{port} {};
     ~LibSerialPort() override;
     bool Open(const std::string& port, const PortSettings& settings) override;
     bool Open();
