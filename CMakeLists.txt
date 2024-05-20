@@ -28,4 +28,9 @@ add_executable(example_node src/main.cpp)
 target_include_directories(example_node PRIVATE ${SERIAL_INCLUDE_DIRS})
 target_link_libraries(example_node PRIVATE ${SERIAL_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT})
 
+add_subdirectory(src)
 
+# testing
+
+enable_testing()
+add_subdirectory(tests)
